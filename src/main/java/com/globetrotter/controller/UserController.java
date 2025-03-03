@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.HashMap;
 import java.util.Map;
 
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "https://superlative-tulumba-63c128.netlify.app")
 @RestController
 @RequestMapping("/api/users")
 public class UserController {
