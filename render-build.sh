@@ -1,15 +1,11 @@
 #!/bin/bash
 
-# Install Java if it's missing
-if ! command -v java &> /dev/null
-then
-    echo "Java not found, installing..."
-    apt-get update && apt-get install -y openjdk-17-jdk
-fi
+# Use Render's preinstalled Java
+export JAVA_HOME=$(/Library/Java/JavaVirtualMachines/jdk-23.jdk/Contents/Home)
+export PATH="$JAVA_HOME/bin:$PATH"
 
-# Set JAVA_HOME explicitly
-export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
 echo "Using JAVA_HOME: $JAVA_HOME"
+java -version
 
 # Ensure mvnw is executable
 chmod +x mvnw
